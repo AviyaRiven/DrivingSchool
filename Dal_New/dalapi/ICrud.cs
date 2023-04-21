@@ -8,10 +8,13 @@ namespace Dal.dalapi
 {
     public interface ICrud<T>
     {
-        void Create(T entity);
-        //void Update(T entity);
-        void Delete(string id);
-        //List<T> Read();
-        T ReadById(string id);
+        Task CreateAsync(T entity);
+        Task UpdateAsync(string id, T entity);
+        Task RemoveAsync(string id);
+        Task<List<T>> ReadAsync();
+        Task<T> ReadByIdAsync(string id);
+
+
+   
     }
 }

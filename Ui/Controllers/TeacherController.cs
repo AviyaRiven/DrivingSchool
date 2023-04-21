@@ -38,10 +38,10 @@ namespace Ui.Controllers
         //        }
 
         [HttpGet]
-        public Teacher GetById(string id)
-        {
-            return teacherService.ReadById(id);
-        }
+        //public Teacher GetById(string id)
+        //{
+        //    return teacherService.ReadById(id);
+        //}
         //[HttpPut]
         //public void Put()
         //{
@@ -51,7 +51,7 @@ namespace Ui.Controllers
         [HttpDelete]
         public void Delete(string id)
         {
-            teacherService.Delete(id);
+            //teacherService.Delete(id);
         }
     }
 

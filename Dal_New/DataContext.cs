@@ -11,7 +11,8 @@ namespace Dal
     {
         public MongoClient DbClient { get; set; }
         public IMongoDatabase Database { get; set; }
-        static DataContext dataContext;
+     
+        static DataContext dataContext = null!;
 
         static object locker = new();
 

@@ -1,10 +1,8 @@
-﻿using Dal.dalImplements;
+﻿using Dal.dalapi;
+using Dal.dalImplements;
 using Dal.dataObjects;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
-//using Bl;
-//using MongoDB.Bson;
-//using Dal_New.dataObjects;
 
 namespace Ui.Controllers
 {
@@ -14,37 +12,42 @@ namespace Ui.Controllers
 
     public class StudentController : ControllerBase
     {
-        [HttpGet]
-        //public List<BsonDocument> GetAll()
-        //{
-        //    //StudentService s2 = new StudentService();
-        //    //return s2.Readi();
-        //}
+        IStudentService service;
+        public StudentController(IStudentService service)
+        {
+            this.service = service; 
+        }
+        //[HttpGet]
+        //    public async Task<List<Student>> Get() =>
+        //        await service.ReadAsync();
+
 
         //[HttpGet("id")]
-        // public string ReadById(string id)
+        //public string ReadById(string id)
         //{
-        //    TeacherServiceBl c = new TeacherServiceBl(); 
-        //    return c.ReadById(id);
+
+        //    return "jfgf";
         //}
 
-        [HttpPost]
-        public void Create(string id, string firstName, string lastName, string phone, string email, int status, DateTime dateOfBirth, string city, string street, string neighborhood, int buildingNumber)
-        {
-            StudentService s2 = new StudentService();
-            Student s = new Student(id, firstName, lastName, phone, email, city, street, neighborhood, buildingNumber, dateOfBirth, status);
-            s2.Create(s);
 
+        //[HttpPost]
+        //public async Task Post(Student newStudent)
+        //{
+        //    StudentService s = new StudentService();
+        //    await s.CreateAsync(newStudent);
+
+        //    return;
+        //}
+
+        //[HttpDelete]
+        //public void DeleteByID(string id)
+        //{ 
+        //}
+        [HttpGet]
+        public string Get()
+        {
+            return "Hi";
         }
 
-        [HttpDelete]
-
-        public void DeleteByID(string id)
-        {
-            StudentService s2 = new StudentService();
-            s2.Delete(id);
-        }
     }
 }
-
-

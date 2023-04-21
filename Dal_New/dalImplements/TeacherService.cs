@@ -20,64 +20,30 @@ namespace Dal.dalImplements
             dataContext = DataContext.Instance;
             collection = dataContext.Database.GetCollection<Teacher>("Teachers");
         }
-        public void Create(Teacher entity)
-        {
-            //var document = new BsonDocument
-            //{
-            //    { "id", entity.Id },
-            //    { "first_name", entity.FirstName },
-            //    { "last_name", entity.LastName },
-            //    { "phone", entity.Phone },
-            //    { "date_of_birth", entity.DateOfBirth },
-            //    { "email", entity.Email },
-            //    { "address", new BsonDocument{
-            //        {"city", entity.Adress.BuildingNumber },
-            //        {"neighborhood", entity.Adress.Neighborhood },
-            //        {"street", entity.Adress.Street },
-            //        {"building_number", entity.Adress.BuildingNumber }
 
-            //    } }
-            //};
-            //collection.InsertOne(entity);
+        public Task CreateAsync(Teacher entity)
+        {
+            throw new NotImplementedException();
         }
 
-        public void Delete(string id)
+        public Task UpdateAsync(string id, Teacher entity)
         {
-            collection.DeleteOne(Builders<Teacher>.Filter.Eq("Id", id));
+            throw new NotImplementedException();
         }
 
-        public Teacher ReadById(string id)
+        public Task RemoveAsync(string id)
         {
-            return collection.Find(Filter.Eq("Id", id)).FirstOrDefault();
+            throw new NotImplementedException();
         }
-        //public string Read()
-        //{
 
-        //    //var dbList = dbClient.ListDatabases().ToList();
+        public Task<List<Teacher>> ReadAsync()
+        {
+            throw new NotImplementedException();
+        }
 
-        //    //Console.WriteLine("The list of databases on this server is: ");
-        //    //foreach (var db in dbList)
-        //    //{
-        //    //    Console.WriteLine(db);
-        //    //}
-
-        //    var collection = dataContext.Database.GetCollection<BsonDocument>("Teachers");
-
-        //    var firstDocument = collection.Find(new BsonDocument()).ToList();
-        //    return firstDocument.ToString();
-        //}
-
-        //public string ReadById(string id)
-        //{
-        //    var collection = dataContext.Database.GetCollection<BsonDocument>("Teachers");
-        //    var filter = Builders<BsonDocument>.Filter.Eq("Id", id);
-        //    var studentDocument = collection.Find(filter).FirstOrDefault();
-        //    return studentDocument.ToString();
-        //}
-
-        //public void Update(string teacherId)
-        //{
-        //    collection.UpdateOne(Builders<Teacher>.Filter.Eq("Id", teacherId), Builders<Teacher>.Update.Set("First_name", "Avraam"));
-        //}
+        public Task<Teacher> ReadByIdAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

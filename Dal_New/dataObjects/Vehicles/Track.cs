@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal.dataObjects.Vehicles
 {
-    internal class Track:Vehicles
+    public class Track:Vehicles
     {
     }
 }
