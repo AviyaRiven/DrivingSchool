@@ -37,7 +37,7 @@ namespace Ui.Controllers
         //            t.Create(teacher);
         //        }
 
-        [HttpGet]
+    
         //public Teacher GetById(string id)
         //{
         //    return teacherService.ReadById(id);
@@ -48,11 +48,7 @@ namespace Ui.Controllers
         //    TeacherService t = new TeacherService();
         //    t.Update("214587963");
         //}
-        [HttpDelete]
-        public void Delete(string id)
-        {
-            //teacherService.Delete(id);
-        }
+     
     }
 
 }

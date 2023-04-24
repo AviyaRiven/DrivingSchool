@@ -12,18 +12,18 @@ namespace Dal.dalImplements
 {
     public class TeacherService : ITeacherService
     {
-        public DataContext dataContext { get; }
+        IDataContext dataContext;
         public IMongoCollection<Teacher> collection { get; }
 
-        public TeacherService()
+        public TeacherService(IDataContext data)
         {
-            dataContext = DataContext.Instance;
+            dataContext = data;
             collection = dataContext.Database.GetCollection<Teacher>("Teachers");
         }
 
-        public Task CreateAsync(Teacher entity)
+        public async Task CreateAsync(Teacher entity)
         {
-            throw new NotImplementedException();
+            await collection.InsertOneAsync(entity);
         }
 
         public Task UpdateAsync(string id, Teacher entity)

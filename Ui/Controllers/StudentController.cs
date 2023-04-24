@@ -43,11 +43,7 @@ namespace Ui.Controllers
         //public void DeleteByID(string id)
         //{ 
         //}
-        [HttpGet]
-        public string Get()
-        {
-            return "Hi";
-        }
+  
 
     }
 }

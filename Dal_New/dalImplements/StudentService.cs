@@ -11,19 +11,17 @@ namespace Dal.dalImplements
 {
     public class StudentService:IStudentService 
     {
-        public DataContext dataContext { get; }
+        IDataContext dataContext;
         public IMongoCollection<Student> collection { get; }
-        public StudentService()
+
+        public FilterDefinitionBuilder<Student> filter;
+        public StudentService(IDataContext data)
         {
-            dataContext = DataContext.Instance;
+            dataContext = data;
             collection = dataContext.Database.GetCollection<Student>("Students");
-
         }
-
-        public Task CreateAsync(Student entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task CreateAsync(Student entity) =>
+            await collection.InsertOneAsync(entity);
 
         public Task UpdateAsync(string id, Student entity)
         {
@@ -38,12 +36,23 @@ namespace Dal.dalImplements
         public async Task<List<Student>> ReadAsync()=>
        
         await collection.Find(_ => true).ToListAsync();
-        
 
-        public async Task<Student> ReadByIdAsync(string id)=>
-        
-            await collection.Find(x => x.Id == id).FirstOrDefaultAsync();
-       
+        public Task<Student> ReadByIdAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        //public async Task<Student> ReadByIdAsync(string id)
+        //{
+        //    try
+        //    {
+        //        Student student = 
+        //    }
+        //}
+
+        //    await collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+
 
 
     }
