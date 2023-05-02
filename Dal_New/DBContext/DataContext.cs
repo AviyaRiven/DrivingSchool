@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dal.dataObjects;
 using MongoDB.Driver;
 
-namespace Dal
+namespace Dal.DBContext
 {
-    public class DataContext<T>:IDataContext
+    public class DataContext:IDataContext
     {
-        public MongoClient DbClient { get; set; }
-        public IMongoDatabase Database { get; set; }
-        public IMongoCollection<T> Collection { get; set; }
+       /// private MongoClient DbClient;
+
+        //public MongoClient DbClient { get; set; }
+        //public IMongoDatabase Database { get; set; }
+        //public IMongoCollection<Student> StuddentCollection { get; set; }
+        //public IMongoCollection<Teacher> TeacherCollection { get; set; }
+        //ask if is true
 
         //static DataContext dataContext = null!;
 
@@ -35,10 +40,14 @@ namespace Dal
         //        return dataContext;
         //    }
         //}
-        public DataContext()
-        {
-            DbClient = new MongoClient("mongodb+srv://aviya:325245223Ar@aviya.yb9cijh.mongodb.net/test?retryWrites=true&w=majority");
-            Database = DbClient.GetDatabase("DrivingSchool");
+        public DataContext(Appsetting setting)
+        {// ליצור את החיבור לדטה בייס
+            //DbClient = new MongoClient("mongodb+srv://aviya:325245223Ar@aviya.yb9cijh.mongodb.net/test?retryWrites=true&w=majority");
+            //Database = DbClient.GetDatabase("DrivingSchool");
+            //DbClient = 
+            //Database = 
+            //StuddentCollection = 
+            //TeacherCollection = 
         }
     }
 }

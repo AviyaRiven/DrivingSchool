@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal.DBContext
 {
-    public interface ICollectionTeacher
+    public interface ICollectionConfiguration
     {
     }
 }
