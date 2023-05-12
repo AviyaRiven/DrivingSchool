@@ -1,13 +1,12 @@
-﻿using Bl.dataObjectBL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bl
+namespace Dal.dataObjects.Vehicles
 {
-    public interface ITeacherBl : ICrudBl<TeacherBl>
+    public class Car:Vehicles
     {
     }
 }

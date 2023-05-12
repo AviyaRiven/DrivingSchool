@@ -11,10 +11,7 @@ namespace Dal.dalapi
         Task CreateAsync(T entity);
         Task UpdateAsync(string id, T entity);
         Task RemoveAsync(string id);
-        Task<List<T>> ReadAsync();
-        Task<T> ReadByIdAsync(string id);
-
-
-   
+        Task<List<T>> GetAsync();
+        Task<T?> GetAsyncById(string id);
     }
 }

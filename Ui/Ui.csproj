@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bl\Bl.csproj" />
-    <ProjectReference Include="..\Dal_New\Dal.csproj" />
+    <ProjectReference Include="..\Bl_new\Bl.csproj" />
   </ItemGroup>
 
 </Project>

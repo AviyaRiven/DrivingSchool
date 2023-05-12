@@ -1,17 +1,17 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Bl
-//{
-//    public interface ICrudBl<T>
-//    {
-//        void Create(T entity);
-//        //void Update(T entity);
-//        void Delete(string id);
-//        //List<T> Read();
-//        //T ReadById(string id);
-//    }
-//}
+namespace Bl
+{
+    public interface ICrudBl<T>
+    {
+        Task CreateAsync(T entity);
+        Task UpdateAsync(string id, T entity);
+        Task RemoveAsync(string id);
+        Task<List<T>> GetAsync();
+        Task<T?> GetAsyncById(string id);
+    }
+}

@@ -1,5 +1,9 @@
 using Dal.dalapi;
 using Dal.dalImplements;
+using Dal;
+using Microsoft.Extensions.Configuration;
+//using services -בלי האובייקטים והפרופיל של ה בי-אל
+using Bl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +13,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddTransient<IStudentService, StudentService>();
-//builder.Services.AddTransient<ITeacherService, TeacherService>();
+//IConfiguration config = ConfigurationBuilder.Build();
+//AddServicesBl
+builder.Services.AddTransient<IStudentBl, StudentServiceBl>();
+builder.Services.AddTransient<ITeacherBl, TeacherServiceBl>();
+builder.Services.AddServicesBl(builder.Configuration);
 
 var app = builder.Build();
 

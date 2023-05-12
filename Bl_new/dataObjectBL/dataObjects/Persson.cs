@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinesLayer.DTOs
+namespace Dal.dataObjects
 {
-    public class PersonDTO
+    public class Persson
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Id { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public AdressDTO Adress { get; set; }
+        public Adress Adress { get; set; }
         public DateTime DateOfBirth { get; set; }
 
-        public PersonDTO(string id,
+        public Persson(string id,
             string firstName,
-            string lastName,
-            string phone,
-            string email,
-            string city,
-            string street,
-            string neighborhood,
-            int buildingNumber,
+            string lastName, 
+            string phone, 
+            string email, 
+            string city, 
+            string street, 
+            string neighborhood, 
+            int buildingNumber, 
             DateTime dateOfBirth)
         {
             FirstName = firstName;
@@ -32,7 +32,7 @@ namespace BussinesLayer.DTOs
             Id = id;
             Phone = phone;
             Email = email;
-            Adress = new AdressDTO(city, neighborhood, street, buildingNumber);
+            Adress = new Adress(city,neighborhood,street,buildingNumber);
             DateOfBirth = dateOfBirth;
         }
     }

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dal.dataObjects;
 
-namespace Dal.dalapi
+namespace Dal.dataObjects.Vehicles
 {
-    public interface ITeacherService:ICrud<Teacher>
+    public class Bus:Vehicles
     {
     }
 }

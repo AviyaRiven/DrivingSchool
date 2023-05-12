@@ -1,48 +1,51 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using Bl.dataObjectBL;
-//using Dal.dalapi;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bl.dataObjectBL;
+using Dal.dalapi;
+using AutoMapper;
+using Dal.dataObjects;
 
-//namespace Bl
-//{
-//    public class StudentServiceBl : IStudentBl
-//    {
-//        public StudentServiceBl(IStudentService studentService)
-//        {
-//            //IStudentBl student = new IStudentBl();
-//        }
+namespace Bl
+{
+    public class StudentServiceBl : IStudentBl
+    {
+        IStudentServiceDal studentServiceDal;
+        IMapper mapper;
+        public StudentServiceBl(IStudentServiceDal studentService,IMapper mapper)
+        {
+            this.studentServiceDal = studentService;
+            this.mapper = mapper;
+        }
 
-//        //public void Create(IStudentService entity)
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
+        public Task CreateAsync(StudentBl entity)
+        {
+            throw new NotImplementedException();
+        }
 
-//        public void Create(StudentBl entity)
-//        {
-//            throw new NotImplementedException();
-//        }
+        public async Task<List<StudentBl>> GetAsync()
+        {
+            List<Student> students = await studentServiceDal.GetAsync();
+            return mapper.Map<List<StudentBl>>(students);
+        }
 
-//        //public void Delete(string id)
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
+        public Task<StudentBl?> GetAsyncById(string id)
+        {
+            throw new NotImplementedException();
+        }
 
-//        //public List<StudentBl> Read()
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
+        public Task RemoveAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
 
-//        //public StudentBl ReadById(string id)
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
+        public Task UpdateAsync(string id, StudentBl entity)
+        {
+            throw new NotImplementedException();
+        }
+        //
 
-//        //public void Update(IStudentService entity)
-//        //{
-//        //    throw new NotImplementedException();
-//        //}
-//    }
-//}
+    }
+}

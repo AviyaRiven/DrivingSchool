@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.DBContext
+namespace Dal.dataObjects.Vehicles
 {
-    public interface ICollectionConfiguration
+    public class Track:Vehicles
     {
     }
 }

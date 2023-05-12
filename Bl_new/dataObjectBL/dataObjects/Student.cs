@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinesLayer.DTOs
+namespace Dal.dataObjects
 {
-    public class StudentDTO:PersonDTO
+    public class Student : Persson
     {
         public int Status { get; set; }
-        public StudentDTO(string id, string firstName,
+        public Student(string id, string firstName,
             string lastName,
             string phone,
             string email,
@@ -18,7 +18,7 @@ namespace BussinesLayer.DTOs
             string neighborhood,
             int buildingNumbere,
             DateTime dateOfBirth,
-            int status) : base(id, firstName, lastName, phone, email, city, street, neighborhood, buildingNumbere, dateOfBirth)
+            int status) :base(id, firstName, lastName, phone, email, city, street, neighborhood, buildingNumbere, dateOfBirth)
         {
             Status = status;
         }

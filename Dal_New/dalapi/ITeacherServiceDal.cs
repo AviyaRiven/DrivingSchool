@@ -7,8 +7,7 @@ using Dal.dataObjects;
 
 namespace Dal.dalapi
 {
-    public interface IStudentService:ICrud<Student>
+    public interface ITeacherServiceDal:ICrud<Teacher>
     {
-
     }
 }

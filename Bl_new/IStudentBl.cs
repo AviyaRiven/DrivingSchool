@@ -1,13 +1,14 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using Bl.dataObjectBL;
+﻿using Bl.dataObjectBL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Bl
-//{
-//    public interface IStudentBl : ICrudBl<StudentBl>
-//    {
-//    }
-//}
+
+namespace Bl
+{
+    public interface IStudentBl : ICrudBl<StudentBl>
+    {
+    }
+}

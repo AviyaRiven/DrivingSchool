@@ -1,0 +1,14 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using Dal.dalImplements;
+global using Dal.dataObjects;
+global using Dal.dalapi;
+global using MongoDB.Driver;
+global using MongoDB.Bson.Serialization.Attributes;
+global using MongoDB.Bson;
+global using Dal.DBContext;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Configuration;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;

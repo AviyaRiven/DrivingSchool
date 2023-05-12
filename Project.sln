@@ -11,10 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bl", "Bl_new\Bl.csproj", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{DDA909B5-BD70-464F-98B3-DCDD009BCB54}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinesLayer", "BussinesLayer\BussinesLayer.csproj", "{2A073B7C-4EC0-4385-8592-6CC972AB1D7D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "TestApi\TestApi.csproj", "{87EBD6CB-2DA7-4DBB-94AD-645BC5D0BDBE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,14 +33,6 @@ Global
 		{DDA909B5-BD70-464F-98B3-DCDD009BCB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDA909B5-BD70-464F-98B3-DCDD009BCB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDA909B5-BD70-464F-98B3-DCDD009BCB54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A073B7C-4EC0-4385-8592-6CC972AB1D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A073B7C-4EC0-4385-8592-6CC972AB1D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A073B7C-4EC0-4385-8592-6CC972AB1D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A073B7C-4EC0-4385-8592-6CC972AB1D7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87EBD6CB-2DA7-4DBB-94AD-645BC5D0BDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87EBD6CB-2DA7-4DBB-94AD-645BC5D0BDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87EBD6CB-2DA7-4DBB-94AD-645BC5D0BDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87EBD6CB-2DA7-4DBB-94AD-645BC5D0BDBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

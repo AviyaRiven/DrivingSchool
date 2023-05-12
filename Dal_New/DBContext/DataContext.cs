@@ -8,9 +8,9 @@ using MongoDB.Driver;
 
 namespace Dal.DBContext
 {
-    public class DataContext:IDataContext
+    public class DataContext : IDataContext
     {
-       /// private MongoClient DbClient;
+        /// private MongoClient DbClient;
 
         //public MongoClient DbClient { get; set; }
         //public IMongoDatabase Database { get; set; }
@@ -40,14 +40,28 @@ namespace Dal.DBContext
         //        return dataContext;
         //    }
         //}
-        public DataContext(Appsetting setting)
-        {// ליצור את החיבור לדטה בייס
-            //DbClient = new MongoClient("mongodb+srv://aviya:325245223Ar@aviya.yb9cijh.mongodb.net/test?retryWrites=true&w=majority");
-            //Database = DbClient.GetDatabase("DrivingSchool");
-            //DbClient = 
-            //Database = 
-            //StuddentCollection = 
-            //TeacherCollection = 
+        //public DataContext(Appsetting setting)
+        //{// ליצור את החיבור לדטה בייס
+        //    //DbClient = new MongoClient("mongodb+srv://aviya:325245223Ar@aviya.yb9cijh.mongodb.net/test?retryWrites=true&w=majority");
+        //    //Database = DbClient.GetDatabase("DrivingSchool");
+        //    //DbClient = 
+        //    //Database = 
+        //    //StuddentCollection = 
+        //    //TeacherCollection = 
+        //}
+        public IMongoCollection<Student> StudentCollection { get; private set; }
+        public IMongoCollection<Teacher> TeacherCollection { get; private set; }
+
+        public DataContext(AppsettingConnection appsettingConnection)
+        {
+            var mongoClient = new MongoClient(appsettingConnection.Client);
+
+            var mongoDatabase = mongoClient.GetDatabase(appsettingConnection.DataBase);
+
+            StudentCollection = mongoDatabase.GetCollection<Student>(appsettingConnection.StudentCollection);
+
+            TeacherCollection = mongoDatabase.GetCollection<Teacher>(appsettingConnection.TeacherCollection);
         }
+
     }
 }

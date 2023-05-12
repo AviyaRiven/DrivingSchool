@@ -1,13 +1,14 @@
-﻿using Bl.dataObjectBL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dal.dataObjects;
 
-namespace Bl
+namespace Dal.dalapi
 {
-    public interface ITeacherBl : ICrudBl<TeacherBl>
+    public interface IStudentServiceDal:ICrud<Student>
     {
+
     }
 }

@@ -4,23 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bl.dataObjectBL
+namespace Dal.dataObjects
 {
-    public class StudentBl:PersonBl
+    public class Teacher:Persson
     {
-        public int Status { get; set; }
-        public StudentBl(string id, string firstName,
+        public Teacher(string id, string firstName,
             string lastName,
             string phone,
             string email,
+            int status,
             string city,
             string street,
             string neighborhood,
             int buildingNumbere,
-            DateTime dateOfBirth,
-            int status) : base(id, firstName, lastName, phone, email, city, street, neighborhood, buildingNumbere, dateOfBirth)
+            DateTime dateOfBirth) :base( id,  firstName,  lastName,  phone,  email, city,  street,  neighborhood,  buildingNumbere,  dateOfBirth)
         {
-            Status = status;
+
         }
     }
 }
