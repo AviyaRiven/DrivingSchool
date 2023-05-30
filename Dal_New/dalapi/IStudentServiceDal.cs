@@ -7,8 +7,8 @@ using Dal.dataObjects;
 
 namespace Dal.dalapi
 {
-    public interface IStudentServiceDal:ICrud<Student>
+    public interface IStudentServiceDal : ICrud<Student>
     {
-
+        Task CreateAsync(Student student);
     }
 }

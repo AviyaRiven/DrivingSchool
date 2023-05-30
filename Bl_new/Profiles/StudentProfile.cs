@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Bl.dataObjectBL;
+using Bl.dataObjects;
 using Dal.dataObjects;
 
 namespace Bl
@@ -8,7 +8,7 @@ namespace Bl
     {
         public StudentProfile()
         {
-            CreateMap<Student, StudentBl>();
+            CreateMap<Student, StudentBl>().ReverseMap();
         }
     }
 }

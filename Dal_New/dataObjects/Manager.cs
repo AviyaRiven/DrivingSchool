@@ -8,18 +8,18 @@ namespace Dal.dataObjects
 {
     public class Manager:Persson
     {
-        public Manager(string id,
-            string firstName,
-            string lastName,
-            string phone,
-            string email,
-            string city,
-            string street, 
-            string neighborhood, 
-            int buildingNumber, 
-            DateTime dateOfBirth):base(id,firstName,lastName,phone,email,city,street,neighborhood,buildingNumber,dateOfBirth)
-        {
+        //public Manager(string id,
+        //    string firstName,
+        //    string lastName,
+        //    string phone,
+        //    string email,
+        //    string city,
+        //    string street, 
+        //    string neighborhood, 
+        //    int buildingNumber, 
+        //    DateTime dateOfBirth):base(id,firstName,lastName,phone,email,city,street,neighborhood,buildingNumber,dateOfBirth)
+        //{
 
-        }
+        //}
     }
 }

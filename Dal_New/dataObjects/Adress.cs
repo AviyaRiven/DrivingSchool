@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Dal.dataObjects
 {
-    public class Adress
+    public class Address
     {
         public string City { get; set; }
         public string Neighborhood { get; set; }
         public string Street { get; set; }
         public int BuildingNumber { get; set; }
     
-    public Adress(string city,string neighborhood,string street,int buildingNumber)
-    {
-            City = city;
-            Neighborhood = neighborhood;
-            Street = street;
-            BuildingNumber = buildingNumber;
-    }
+    //public Adress(string city,string neighborhood,string street,int buildingNumber)
+    //{
+    //        City = city;
+    //        Neighborhood = neighborhood;
+    //        Street = street;
+    //        BuildingNumber = buildingNumber;
+    //}
 
     }
 }

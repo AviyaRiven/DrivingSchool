@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bl.dataObjectBL;
 using Dal.dalapi;
 using AutoMapper;
 using Dal.dataObjects;
+using Bl.dataObjects;
 
 namespace Bl
 {
@@ -22,7 +22,11 @@ namespace Bl
 
         public Task CreateAsync(StudentBl entity)
         {
-            throw new NotImplementedException();
+            entity.Id = null;
+            //StudentBl st = new StudentBl() {  TZ=e};
+
+            Student dalEntity = mapper.Map<Student>(entity);
+            return studentServiceDal.CreateAsync(dalEntity);
         }
 
         public async Task<List<StudentBl>> GetAsync()
@@ -31,21 +35,22 @@ namespace Bl
             return mapper.Map<List<StudentBl>>(students);
         }
 
-        public Task<StudentBl?> GetAsyncById(string id)
+        public async Task<StudentBl?> GetAsyncById(string id)
         {
-            throw new NotImplementedException();
+            Student? s = await studentServiceDal.GetAsyncById(id);
+            return mapper.Map<StudentBl>(s);
         }
 
-        public Task RemoveAsync(string id)
+        public async Task RemoveAsync(string id)
         {
-            throw new NotImplementedException();
+           await studentServiceDal.RemoveAsync(id);
         }
 
-        public Task UpdateAsync(string id, StudentBl entity)
+        public async Task UpdateAsync(string id, StudentBl entity)
         {
-            throw new NotImplementedException();
+            Student dalEntity =  mapper.Map<Student>(entity);
+             await studentServiceDal.UpdateAsync(id, dalEntity);
         }
-        //
 
     }
 }

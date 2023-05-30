@@ -20,6 +20,7 @@ namespace Bl
             services.AddRepositories(configuration);
             services.AddAutoMapper(typeof(TeacherProfile));
             services.AddAutoMapper(typeof(StudentProfile));
+            services.AddAutoMapper(typeof(AddressProfile));
             return services;
         }
     }

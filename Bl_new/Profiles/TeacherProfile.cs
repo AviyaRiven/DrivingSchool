@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Bl.dataObjects;
 
 namespace Bl.Profiles
 {
@@ -12,7 +13,7 @@ namespace Bl.Profiles
     {
         public TeacherProfile()
         {
-            CreateMap<Teacher, TeacherBl>();
+            CreateMap<Teacher, TeacherBl>().ReverseMap();
         }
     }
 }

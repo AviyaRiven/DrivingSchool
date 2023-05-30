@@ -1,6 +1,5 @@
 ﻿//פונקציית Get
 
-using Bl.dataObjectBL;
 using Dal.dalapi;
 using Dal.dalImplements;
 using Dal.dataObjects;
@@ -11,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-
+using Bl.dataObjects;
 
 namespace Bl
 {
-        public class TeacherServiceBl : ITeacherBl
+    public class TeacherServiceBl : ITeacherBl
         {
             ITeacherServiceDal teacherServiceDal;
             IMapper mapper;
@@ -27,7 +26,8 @@ namespace Bl
 
         public Task CreateAsync(TeacherBl entity)
         {
-            throw new NotImplementedException();
+                Teacher dalEntity = mapper.Map<Teacher>(entity);
+                return teacherServiceDal.CreateAsync(dalEntity);
         }
 
         public async Task<List<TeacherBl>> GetAsync()
@@ -38,19 +38,21 @@ namespace Bl
             return mapper.Map<List<TeacherBl>>(teachers);
         }
 
-        public Task<TeacherBl?> GetAsyncById(string id)
+        public async Task<TeacherBl?> GetAsyncById(string id)
         {
-            throw new NotImplementedException();
+            Teacher t = await teacherServiceDal.GetAsyncById(id);
+            return mapper.Map<TeacherBl>(t);
         }
 
-        public Task RemoveAsync(string id)
+        public async Task RemoveAsync(string id)
         {
-            throw new NotImplementedException();
+            await teacherServiceDal.RemoveAsync(id);
         }
 
-        public Task UpdateAsync(string id, TeacherBl entity)
+        public async Task UpdateAsync(string id, TeacherBl entity)
         {
-            throw new NotImplementedException();
+            Teacher dalEntity = mapper.Map<Teacher>(entity);
+             await teacherServiceDal.UpdateAsync(id, dalEntity);
         }
     }
 }

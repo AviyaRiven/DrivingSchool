@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.dataObjects.Vehicles
+namespace Bl.dataObjects.Vehicles
 {
-    public class Track:Vehicles
+    public class VehiclesBl
     {
     }
 }

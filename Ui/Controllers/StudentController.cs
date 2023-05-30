@@ -4,7 +4,7 @@ using Dal.dataObjects;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Bl;
-using Bl.dataObjectBL;
+using Bl.dataObjects;
 
 namespace Ui.Controllers
 {
@@ -24,17 +24,17 @@ namespace Ui.Controllers
             public async Task<List<StudentBl>> Get() =>
                 await studentBl.GetAsync();
 
-            [HttpGet("{id:length(24)}")]
-            public async Task<ActionResult<StudentBl>> Get(string id)
+            [HttpGet("{id}")]
+            public async Task<StudentBl> Get(string id)
             {
-                var book = await studentBl.GetAsyncById(id);
+                var tempStudent = await studentBl.GetAsyncById(id);
 
-                if (book is null)
-                {
-                    return NotFound();
-                }
+            if (tempStudent is null)
+            {
+                return null;
+            }
 
-                return book;
+            return tempStudent;
             }
 
             [HttpPost]
@@ -45,29 +45,29 @@ namespace Ui.Controllers
                 return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
             }
 
-            [HttpPut("{id:length(24)}")]
+            [HttpPut("{id}")]
             public async Task<IActionResult> Update(string id, StudentBl updatedStudent)
             {
-                var book = await studentBl.GetAsyncById(id);
+                var tempStudent = await studentBl.GetAsyncById(id);
 
-                if (book is null)
+                if (tempStudent is null)
                 {
                     return NotFound();
                 }
 
-            updatedStudent.Id = book.Id;
+            updatedStudent.Id = tempStudent.Id;
 
                 await studentBl.UpdateAsync(id, updatedStudent);
 
                 return NoContent();
             }
 
-            [HttpDelete("{id:length(24)}")]
+            [HttpDelete("{id}")]
             public async Task<IActionResult> Delete(string id)
             {
-                var book = await studentBl.GetAsyncById(id);
+                var tempStudent = await studentBl.GetAsyncById(id);
 
-                if (book is null)
+                if (tempStudent is null)
                 {
                     return NotFound();
                 }

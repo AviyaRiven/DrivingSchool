@@ -24,16 +24,17 @@ namespace Dal.dalImplements
          await collection.Find(_ => true).ToListAsync();
 
         public async Task<Student?> GetAsyncById(string id) =>
-            await collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+            await collection.Find(x => x.TZ == id).FirstOrDefaultAsync();
+
 
         public async Task CreateAsync(Student newStudent) =>
             await collection.InsertOneAsync(newStudent);
 
         public async Task UpdateAsync(string id, Student updatedStudent) =>
-            await collection.ReplaceOneAsync(x => x.Id == id, updatedStudent);
+            await collection.ReplaceOneAsync(x => x.TZ == id, updatedStudent);
 
         public async Task RemoveAsync(string id) =>
-            await collection.DeleteOneAsync(x => x.Id == id);
+            await collection.DeleteOneAsync(x => x.TZ == id);
 
     }
 
