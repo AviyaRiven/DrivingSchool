@@ -4,7 +4,7 @@ using Dal.dataObjects;
 
 namespace Bl.Profiles
 {
-    internal class AddressProfile : Profile
+    public class AddressProfile : Profile
     {
         public AddressProfile()
         {

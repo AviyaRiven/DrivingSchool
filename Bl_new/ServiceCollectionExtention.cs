@@ -17,6 +17,7 @@ namespace Bl
         public static IServiceCollection AddServicesBl(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IStudentServiceDal, StudentServiceDal>();
+            services.AddTransient<ITeacherServiceDal, TeacherServiceDal>();
             services.AddRepositories(configuration);
             services.AddAutoMapper(typeof(TeacherProfile));
             services.AddAutoMapper(typeof(StudentProfile));

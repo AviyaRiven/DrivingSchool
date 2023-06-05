@@ -9,6 +9,5 @@ namespace Dal.dalapi
 {
     public interface IStudentServiceDal : ICrud<Student>
     {
-        Task CreateAsync(Student student);
     }
 }

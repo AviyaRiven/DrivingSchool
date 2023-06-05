@@ -9,7 +9,7 @@ using Bl.dataObjects;
 
 namespace Bl.Profiles
 {
-    internal class TeacherProfile : Profile
+    public class TeacherProfile : Profile
     {
         public TeacherProfile()
         {

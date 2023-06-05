@@ -24,18 +24,19 @@ namespace Ui.Controllers
         public async Task<List<TeacherBl>> Get() =>
             await teacher.GetAsync();
 
-        [HttpGet("{id:length(24)}")]
-        public async Task<ActionResult<TeacherBl>> Get(string id)
+        [HttpGet("{id}")]
+        public async Task<TeacherBl> Get(string id)
         {
             var tempTeacher = await teacher.GetAsyncById(id);
             
             if (tempTeacher is null)
             {
-                return NotFound();
+                return null;
             }
 
             return tempTeacher;
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Post(TeacherBl newTeacher)
@@ -45,7 +46,7 @@ namespace Ui.Controllers
             return CreatedAtAction(nameof(Get), new { id = newTeacher.Id }, newTeacher);
         }
 
-        [HttpPut("{id:length(24)}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, TeacherBl updatedTeacher)
         {
             var tempTeacher = await teacher.GetAsyncById(id);
@@ -62,7 +63,7 @@ namespace Ui.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var tempTeacher = await teacher.GetAsyncById(id);

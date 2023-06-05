@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 //IConfiguration config = ConfigurationBuilder.Build();
 //AddServicesBl
 builder.Services.AddTransient<IStudentBl, StudentServiceBl>();
+builder.Services.AddTransient<ITeacherBl, TeacherServiceBl>();
 //builder.Services.AddTransient<ITeacherBl, TeacherServiceBl>();
 builder.Services.AddServicesBl(builder.Configuration);
 
