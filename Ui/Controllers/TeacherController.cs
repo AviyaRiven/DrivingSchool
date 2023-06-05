@@ -43,7 +43,7 @@ namespace Ui.Controllers
         {
             await teacher.CreateAsync(newTeacher);
 
-            return CreatedAtAction(nameof(Get), new { id = newTeacher.Id }, newTeacher);
+            return CreatedAtAction(nameof(Get), new { id = newTeacher.TZ }, newTeacher);
         }
 
         [HttpPut("{id}")]
@@ -56,7 +56,7 @@ namespace Ui.Controllers
                 return NotFound();
             }
 
-            updatedTeacher.Id = tempTeacher.Id;
+            updatedTeacher.TZ = tempTeacher.TZ;
 
             await teacher.UpdateAsync(id, updatedTeacher);
 

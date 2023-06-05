@@ -22,7 +22,7 @@ namespace Bl
 
         public Task CreateAsync(StudentBl entity)
         {
-            entity.Id = null;
+            entity.TZ = null;
             //StudentBl st = new StudentBl() {  TZ=e};
 
             Student dalEntity = mapper.Map<Student>(entity);

@@ -20,14 +20,14 @@ namespace Ui.Controllers
             studentBl = student;
         }
 
-            [HttpGet]
-            public async Task<List<StudentBl>> Get() =>
-                await studentBl.GetAsync();
+        [HttpGet]
+        public async Task<List<StudentBl>> Get() =>
+            await studentBl.GetAsync();
 
-            [HttpGet("{id}")]
-            public async Task<StudentBl> Get(string id)
-            {
-                var tempStudent = await studentBl.GetAsyncById(id);
+        [HttpGet("{id}")]
+        public async Task<StudentBl> Get(string id)
+        {
+            var tempStudent = await studentBl.GetAsyncById(id);
 
             if (tempStudent is null)
             {
@@ -35,14 +35,14 @@ namespace Ui.Controllers
             }
 
             return tempStudent;
-            }
+        }
 
-            [HttpPost]
+        [HttpPost]
             public async Task<IActionResult> Post(StudentBl newStudent)
             {
                 await studentBl.CreateAsync(newStudent);
 
-                return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
+                return CreatedAtAction(nameof(Get), new { id = newStudent.TZ }, newStudent);
             }
 
             [HttpPut("{id}")]
@@ -55,7 +55,7 @@ namespace Ui.Controllers
                     return NotFound();
                 }
 
-            updatedStudent.Id = tempStudent.Id;
+                //updatedStudent.TZ = tempStudent.TZ;
 
                 await studentBl.UpdateAsync(id, updatedStudent);
 

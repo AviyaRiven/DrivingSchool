@@ -8,8 +8,8 @@ namespace Bl.dataObjects
 {
     public class PerssonBl
     {
-        
-        public string Id { get; set; }
+   
+        //public string Id { get; set; }
         public string TZ { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
